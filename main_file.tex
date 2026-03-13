@@ -1,0 +1,203 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+12pt,
+english,
+singlespacing,
+headsepline
+]{MastersDoctoralThesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{caption}
+\usepackage{subcaption} 
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{tikz}
+
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[backend=bibtex, sorting = none]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage[autostyle=true]{csquotes}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{placeins}
+\let\cleardoublepage=\clearpage
+
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftbeforesecskip}{5pt}
+\setlength{\cftbeforesubsecskip}{5pt}
+
+\geometry{
+	paper=a4paper,
+	inner=2.5cm,
+	outer=3.5cm,
+	bindingoffset=.5cm,
+	top=2.5cm,
+	bottom=2.5cm,
+    right=2.5cm,
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{The impact of computational structural descriptions of PFAS compounds on the performance of classification models estimating their half-lives}
+\supervisor{REDACTED_SUPERVISOR}
+\author{REDACTED AUTHOR1 NAME, REDACTED AUTHOR 2 NAME}
+\keywords{}
+
+\university{\textcolor{blue}{\href{UNI WEBSITE}{REDACTED UNI NAME}}}
+\department{\textcolor{blue}{\href{CATHEDRAL WEBSITE}{Wydział Chemii}}}
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle}
+\hypersetup{pdfauthor=\authorname}
+\hypersetup{pdfkeywords=\keywordnames}
+\hypersetup{colorlinks = true, linkcolor = black}
+}
+
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+\onehalfspacing
+
+\begin{document}
+
+\onehalfspacing
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\authorshipname}{Declarations}
+\renewcommand{\contentsname}{Table of contents}
+\renewcommand{\figurename}{Figure.}
+\renewcommand{\listfigurename}{Figure list}
+\renewcommand{\listtablename}{Table list}
+\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
+\newcommand\clearrow{\global\let\rowmac\relax}
+\frontmatter
+\setlength{\emergencystretch}{10pt}
+
+\pagestyle{plain}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{left}
+\includegraphics[width=0.5\textwidth]{ug_logo.png} \\[0cm]
+\end{left}
+\vspace*{0cm}
+
+\begin{center}
+{\LARGE\bfseries University of Gdańsk\\[0.5em]
+Faculty of Chemistry}\\[1.25cm]
+
+{\bfseries\Large Julia Neumann, Student registration no.: 274301\\}
+Field of study: Chemistry 2nd degree\\
+Specialisation: Digital Chemistry\\
+\\[1cm]
+{\bfseries\Large Jakub Rudziński, Student registration no.: 274294\\}
+Field of study: Chemistry 2nd degree\\
+Specialisation: Digital Chemistry\\
+
+\\[1cm]
+
+{\bfseries\LARGE The impact of computational structural descriptions of PFAS compounds on the performance of classification models estimating their half-lives}\\[0.5cm]
+
+{\Large\textit{\textbf{Wpływ dokładności opisu struktury związków PFAS metodami chemii komputerowej na jakość modeli klasyfikacyjnych stosowanych do szacowania ich okresu półtrwania}}}\\[1cm]
+
+\begin{flushright}
+Diploma thesis completed at the\\
+Laboratory of Environmental 
+Chemoinformatics\\
+under the supervision of\\
+dr hab. Agnieszka Gajewicz-Skrętna
+\end{flushright}
+\\
+{\textbf{Gdańsk 2025}}
+
+\end{center}
+\end{titlepage}
+
+%\cleardoublepage
+%\begin{left}
+%\includegraphics[width=0.5\textwidth]{ug_logo.png} \\[0.5cm]
+%\end{left}
+%\thispagestyle{empty}
+%\vspace*{1cm}
+%\begin{center}
+%\end{center}
+
+\cleardoublepage
+\thispagestyle{empty}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter
+
+\pagestyle{thesis}
+
+\include{Chapters/Abstract}
+\include{Chapters/Chapter1} 
+\include{Chapters/Chapter3}
+\include{Chapters/Chapter4} 
+\include{Chapters/Chapter5} 
+\include{Chapters/Chapter6}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - FIGURES AND TABLES
+%----------------------------------------------------------------------------------------
+\listoffigures
+\listoftables
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\renewcommand\bibname{Bibliography}
+\printbibliography[]
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname}
+\begin{figure}[H]
+\includegraphics[width=1\textwidth, center]{declaration_JR.png}
+\end{figure}
+
+\vspace{2cm}
+ \begin{figure}[H]
+\includegraphics[width=1\textwidth, center]{declaration_JN.png}
+\end{figure}
+
+\vspace{2cm}
+ \begin{figure}[H]
+\includegraphics[width=1\textwidth, center]{consent.png}
+\end{figure}
+
+\end{declaration}
+\end{document}
