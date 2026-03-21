@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "pfas-nephrotoxicity-classification"
+version = "0.1.0"
+description = "ML classification of PFAS compounds by nephrotoxicity severity using molecular and quantum-chemical descriptors"
+authors = ["Julia Neumann <julia.kinga.neumann@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/julneu12/Master-s-Thesis"
+repository = "https://github.com/julneu12/Master-s-Thesis"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+scikit-learn = "^1.3.0"
+matplotlib = "^3.6.0"
+seaborn = "^0.12.0"
+xgboost = "^1.7.0"
+jupyter = "^1.0.0"
+openpyxl = "^3.1.0"
+ipykernel = "^6.25.0"
+scipy = "^1.10.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
